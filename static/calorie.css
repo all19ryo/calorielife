@@ -1,0 +1,78 @@
+@charset "UTF-8";
+html {
+font-size: 100%;
+}
+/* #cal_list{
+    width:100%;
+} */
+#nav{
+    display:none;
+}
+.pizza{
+    background-image:url( "../static/food.jpg");
+}
+.card-head{
+    /* opacity:0.5; */
+    text-align: center;
+    /* background-size:contain; */
+    /* font-size:60rem; */
+    /* padding: 10px 0; */
+    background-image:url( "../static/orange.jpg");
+    /* background-size:cover; */
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.card-head h3{
+    padding:10px;
+    font-family: 'M PLUS 1p', sans-serif;
+    font-size:4rem;
+    letter-spacing: 2px;
+
+}
+
+
+
+
+.card-head2{
+    /* opacity:0.5; */
+    text-align: center;
+    
+    /* font-size:60rem; */
+    /* padding: 10px 0; */
+    background-image:url( "../static/itigo.jpg");
+    /* background-size:cover; */
+  
+    background-position: center center;
+}
+.toumei{
+    padding: 0px 0;
+    background: rgba(255,255,255,0.7);
+}
+.card-head2 h3{
+    padding: 10px;
+    font-family: 'M PLUS 1p', sans-serif;
+    font-size:4rem;
+    letter-spacing: 2px;
+
+}
+
+
+
+.footer{
+
+    text-align: center;
+}
+
+@media(max-width: 768px){
+    #nav{
+        display:block;
+    }
+
+
+
+ #bread{
+     /* text-align: right; */
+    display:none;
+}
+}

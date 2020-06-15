@@ -1,0 +1,77 @@
+{% extends 'cal/base.html' %}
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav">
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'cal:top' %}">トップに戻る</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'cal:day_create' %}">記録をつける</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'cal:cal_list' %}">食事記録</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'cal:calorie_create' %}">食品を追加する</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">カロリー表はこちら！！<span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <ol class="breadcrumb" id="bread">
+      <li><a href="{% url 'cal:top' %}">トップに戻る</a></li>
+      <li><a href="{% url 'cal:day_create' %}">記録をつける</a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'cal:cal_list' %}">食事記録</a>
+      </li>
+      <li><a href="{% url 'cal:calorie_create' %}">食品を追加する</a></li>
+      <li>カロリー表はこちら！！</li>
+    </ol>
+
+    <div class="head ">
+      <div class="card-head2">
+        <div class="toumei">
+          <h3><b>カロリー表</b></h3>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table id="cal_list" width="100%" class="table table-striped table-bordered table-hover">
+            <thead>
+              <tr class="info">
+                <th class="text-center">商品</th>
+                <th class="text-center">ジャンル</th>
+                <th class="text-center">カロリー</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for item in object_list %}
+              <tr class="odd gradeX text-center">
+                <td class="text-center" width="100">{{ item.name}}</td>
+                <td class="text-center" width="100">{{ item.category }}</td>
+                <td class="text-center" width="140">{{ item.cal }}</td>
+
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          <h5 class="text-info">表に無い食品はお手数ですが上記「食品を追加する」より追加してください。</h5>
+          <h5 class="text-danger">表記の文字や値が明らかにおかしいと感じたものは変更・削除を行う可能性がございます。</h5>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

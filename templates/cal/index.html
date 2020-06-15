@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="{% static 'style.css'%}">
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&display=swap" rel="stylesheet">
+  <link href="/docs/4.5/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&family=Oswald:wght@500&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="w2">
+      <h1>Calorie Life</h1>
+
+      {%if error%}
+      {{error}}
+      {%endif%}
+      <form class="form-signin" method="POST" action=''>{% csrf_token %}
+
+        <h6 for="inputEmail" class="sr-only">ID</h6>
+        <input type="text" id="inputEmail" class="form-control" name='username' placeholder="username" required
+          autofocus>
+
+        <h6 for="inputPassword" class="sr-only">Password</h6>
+        <input type="password" id="inputPassword" class="form-control" name='password' placeholder="Password" required>
+        <div class="checkbox mb-3">
+        </div>
+        <button class="btn" type="submit">はじめる</button>
+
+      </form>
+      <h2>このサイトでできること</h2>
+      <h3>①日々の食事記録を残せる！</h3>
+      <p>食品リストから食べたものを選択するだけで簡単に日々の食事管理ができます。</p>
+      <h3>②食品のカロリー一覧を見れる！</h3>
+      <p>カロリー情報つきの食品リストがいつでも見れるので、自分の料理の参考や、健康管理に使用できます。</p>
+      <p>一覧にない食品や自分オリジナルのメニューはワンクリックで簡単に登録できます！</p>
+
+
+      <p class="footer">Copyright © 2020 Calorie Life Inc. All Rights Reserved. </pr>
+    </div>
+  </div>
+</body>
+<script type="text/javascript" src="{% static 'js.js'%}"></script>
+
+</html>

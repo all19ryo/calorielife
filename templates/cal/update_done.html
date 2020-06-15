@@ -1,0 +1,44 @@
+{% extends 'cal/base.html' %}
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'cal:top' %}">トップに戻る</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'cal:day_create' %}">記録をつける</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'cal:cal_list' %}">食事記録</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'cal:calorie_create' %}">食品を追加する</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="{% url 'cal:item_list' %}" tabindex="-1" aria-disabled="true">カロリー表はこちら！！</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <ol class="breadcrumb" id="bread">
+      <li><a href="{% url 'cal:top' %}">トップに戻る</a></li>
+       <li><a href="{% url 'cal:day_create' %}">記録をつける</a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'cal:cal_list' %}">食事記録</a>
+      </li>
+      <li><a href="{% url 'cal:calorie_create' %}">食品を追加する</a></li>
+      <li><a href="{% url 'cal:item_list' %}">カロリー表はこちら！！</a></li>
+    </ol>
+    <div class="card mb-3">
+      <div class="card-body">
+        <div class="alert alert-info" role="alert">データ更新が正常終了しました。</div>
+        {% endblock content %}
